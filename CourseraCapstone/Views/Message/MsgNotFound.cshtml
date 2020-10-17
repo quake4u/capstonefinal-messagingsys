@@ -1,0 +1,15 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "404 Error";
+}
+
+<div class="alert alert-danger mt-1 mb-1">
+    <h4>404 Not Found Error:</h4>
+    <hr />
+    <h5>Msg with Id = @Model can not be found</h5>
+</div>
+
+<div class="row mt-2">
+    <a asp-controller="Message" asp-action="Index" class="btn btn-primary">Back To Message Center</a>
+</div>

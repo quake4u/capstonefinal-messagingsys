@@ -1,0 +1,24 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="text-center">
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> <h4>@TempData["message"]</h4>
+        </div>
+    }
+    <h1 class="display-4">Welcome</h1>
+    <p>Coursera Cybersecurity Capstone Project</p>
+    @if (!signInManager.IsSignedIn(User))
+    {
+        <div>
+            <a asp-controller="Account" asp-action="Register" class="btn btn-success">Register</a>
+            <a asp-controller="Account" asp-action="Login" class="btn btn-primary">Login</a>
+        </div>
+    }
+</div>

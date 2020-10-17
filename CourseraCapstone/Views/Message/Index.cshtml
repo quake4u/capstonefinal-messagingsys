@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Msg>
+
+@{
+    ViewBag.Title = "Message Center";
+}
+<h1>Message Center</h1>
+
+<div class="p-2">
+    <a asp-action="Send" asp-controller="Message" class="btn btn-primary">Send New Message</a>
+</div>
+
+@if (Model.Count() == 0)
+{
+    <h4>Your inbox is empty</h4>
+}
+else
+{
+    <h4>Your Messages</h4>
+
+    <div class="p-2">
+        @foreach (var msg in Model)
+        {
+            <ul>
+                <li>
+                    <a asp-controller="Message" asp-action="Details" asp-route-id="@msg.Id">Message From @msg.Sender.UserName</a>
+                </li>
+            </ul>
+        }
+    </div>
+}

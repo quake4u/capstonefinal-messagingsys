@@ -1,0 +1,18 @@
+﻿@model Msg
+
+@{
+    ViewBag.Title = "Message Details";
+}
+
+<h1>Message Details</h1>
+
+<div class="row col-lg-12 m-2">
+    From : @Model.Sender.UserName
+</div>
+<div class="row col-lg-12 m-2">
+    Content : @Model.Content
+</div>
+
+<div class="row col-lg-12 mt-2">
+    <a asp-controller="Message" asp-action="Index" class="btn btn-primary">Back To Message Center</a>
+</div>

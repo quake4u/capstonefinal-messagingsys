@@ -1,0 +1,12 @@
+﻿@if (ViewBag.SuccessTitle == null)
+{
+    <h1 class="text-success">Success</h1>
+}
+else
+{
+    <h1>@ViewBag.SuccessTitle</h1>
+    <h5>@ViewBag.SuccessMessage</h5>
+    
+    <a asp-controller="Message" asp-action="Index" class="btn btn-primary">Back To Message Center</a>
+}
+

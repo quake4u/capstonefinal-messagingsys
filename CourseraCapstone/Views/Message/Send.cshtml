@@ -1,0 +1,27 @@
+﻿@model SendMessageViewModel
+
+@{
+    ViewBag.Title = "Send Message";
+}
+<div class="row">
+    <div class="col-md-6">
+        <h1>Send Message</h1>
+        <form enctype="multipart/form-data" asp-action="Send" asp-controller="Message" method="post">
+            <div class="form-group">
+                <label asp-for="UserName"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span class="text-danger" asp-validation-for="UserName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content"></label>
+                <input asp-for="Content" class="form-control" />
+                <span class="text-danger" asp-validation-for="Content"></span>
+            </div>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+    </div>
+</div>

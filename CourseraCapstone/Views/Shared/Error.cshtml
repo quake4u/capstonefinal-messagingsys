@@ -1,0 +1,10 @@
+﻿@if (ViewBag.ErrorTitle == null)
+{
+    <h1>An Error Has Occurred. We will fix it.</h1>
+}
+else
+{
+    <h1 class="text-danger">@ViewBag.ErrorTitle</h1>
+    <h6 class="text-danger">@ViewBag.ErrorMessage</h6>
+}
+
